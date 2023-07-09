@@ -5,8 +5,8 @@
     <router-link to="/test">Test</router-link>
   </nav>
   <test-component></test-component>
-  <!-- <test-component2></test-component2> -->
-  <!-- <test-component3></test-component3> -->
+  <test-component2></test-component2>
+  <test-component3></test-component3>
   <router-view/>
 </template>
 
