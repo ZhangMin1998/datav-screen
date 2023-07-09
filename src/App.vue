@@ -4,9 +4,17 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/test">Test</router-link>
   </nav>
-  <test-component></test-component>
-  <test-component2></test-component2>
-  <test-component3></test-component3>
+  <div class="icon-wrapper">
+    <test-component></test-component>
+    <!-- <svg width="30" height="30" viewBox="0 0 100 100" style="color: red">
+      <use href="#more"></use>
+    </svg> -->
+    <svg width="30" height="30" style="color: rgb(67, 201, 219)">
+      <use href="#more2"></use>
+    </svg>
+  </div>
+  <!-- <test-component2></test-component2>
+  <test-component3></test-component3> -->
   <router-view/>
 </template>
 
@@ -30,5 +38,8 @@ nav {
       color: #42b983;
     }
   }
+}
+.icon-wrapper{
+  color: #42b983;
 }
 </style>
