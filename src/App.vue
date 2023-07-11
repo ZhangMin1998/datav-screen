@@ -14,6 +14,7 @@
     </svg> -->
     <!-- <Icon name="more2" :style="{width:50, height: 50}"></Icon> -->
     <Icon name="more2" class="common-icon"></Icon>
+    <Icon name="zdxm" class="common-icon"></Icon>
   </div>
   <!-- <test-component2></test-component2>
   <test-component3></test-component3> -->
