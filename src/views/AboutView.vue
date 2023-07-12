@@ -1,5 +1,16 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="home">
+    <svg-animation></svg-animation>
   </div>
 </template>
+
+<script>
+
+export default {
+  name: 'aboutView'
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>
