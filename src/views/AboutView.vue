@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <svg-animation></svg-animation>
+    <!-- <svg-animation></svg-animation> -->
   </div>
 </template>
 

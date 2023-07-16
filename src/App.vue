@@ -4,7 +4,12 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/test">Test</router-link>
   </nav>
-  <svg-animation></svg-animation>
+  <!-- <svg-animation></svg-animation> -->
+  <datav-loading width="200" height="200" outsideColor="pink" insideColor="green" duration="2">
+    <div style="font-size: 20px;">
+      数据大屏加载中...
+    </div>
+  </datav-loading>
   <!-- <router-view/> -->
 </template>
 
