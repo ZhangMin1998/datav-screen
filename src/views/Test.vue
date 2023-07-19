@@ -1,6 +1,9 @@
 <template>
   <div class="test">
     <h1>This is an test page {{ name }}</h1>
+    <test-component></test-component>
+    <Icon name="more2" class="common-icon"></Icon>
+    <Icon name="zdxm" class="common-icon"></Icon>
   </div>
 </template>
 
