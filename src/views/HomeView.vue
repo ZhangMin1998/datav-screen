@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Container>
+    <Container :options="{ width: 3840, height: 2160 }">
       <div class="test">111</div>
     </Container>
   </div>
@@ -24,9 +24,12 @@ export default {
 <style lang="scss" scoped>
 .home{
   .test{
-    font-style: 14px;
-    color: red;
-    transform: scale(0.5);
+    width: 100px;
+    height: 100px;
+    background: pink;
+    font-size: 14px;
+    color: #000;
+    transform: scale(1, 1);
   }
 }
 </style>
