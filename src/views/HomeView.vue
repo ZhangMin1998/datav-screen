@@ -14,9 +14,9 @@ export default {
 
   },
   mounted () {
-    window.addEventListener('resize', () => {
-      console.log('resize')
-    })
+    // window.addEventListener('resize', () => {
+    //   console.log('resize')
+    // })
   }
 }
 </script>
@@ -27,7 +27,7 @@ export default {
     width: 100px;
     height: 100px;
     background: pink;
-    font-size: 14px;
+    font-size: 24px;
     color: #000;
     transform: scale(1, 1);
   }
