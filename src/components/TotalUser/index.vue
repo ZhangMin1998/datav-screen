@@ -5,7 +5,7 @@
     <div class="total">
       <count-to
         :start-val="startVal"
-        :end-val="todayUser"
+        :end-val="Number(todayUser)"
         :duration="1000"
         separator=","
         autoplay
@@ -15,7 +15,7 @@
       <span class="percent-text-1">每日增长率:
         <count-to
         :start-val="startVal"
-        :end-val="growthLastDay"
+        :end-val="Number(growthLastDay)"
         :duration="1000"
         suffix="%"
         :decimals="2"
@@ -25,7 +25,7 @@
       <span class="percent-text-2">每月增长率:
         <count-to
         :start-val="startVal"
-        :end-val="growthLastMonth"
+        :end-val="Number(growthLastMonth)"
         :duration="1000"
         suffix="%"
         :decimals="2"
@@ -48,11 +48,11 @@ export default {
   props: {
     todayUser: Number,
     growthLastDay: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     growthLastMonth: {
-      type: Number,
+      type: [Number, String],
       default: 0
     }
   },

@@ -9,7 +9,7 @@
         <div class="age">
           <count-to
             :start-val="startAge"
-            :end-val="avgAge"
+            :end-val="Number(avgAge)"
             :duration="1000"
             :decimals="2"
             autoplay
@@ -19,6 +19,21 @@
       </div>
     </div>
     <div id="average-age-chart"></div>
+    <div class="average_data_box">
+      <div class="average_data" v-for="(item, index) in data" :key="index">
+        <div class="average_data_value">
+          <count-to
+            :startVal="item.startValue"
+            :endVal="item.value"
+            :duration="1000"
+          />
+        </div>
+        <div class="average_data_axis">
+          <div class="point" :style="{background: item.color}" />
+          <div class="text">{{ item.axis }}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -166,7 +181,41 @@ export default {
     }
   }
   #average-age-chart{
-    height: 120px;
+    height: 105px;
+  }
+  .average_data_box{
+    display: flex;
+    .average_data{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bolder;
+      .average_data_value{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .average_data_axis{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+        .point {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+        }
+        .text {
+          margin-left: 10px;
+          font-size: 16px;
+        }
+      }
+    }
   }
 }
 </style>
