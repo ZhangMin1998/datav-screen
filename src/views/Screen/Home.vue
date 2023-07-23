@@ -1,0 +1,154 @@
+<template>
+  <div class="home">
+    <!-- <Container :options="{ width: 3840, height: 2160 }">
+      <div class="test">111</div>
+    </Container> -->
+    <datav-loading width="100" height="100" v-if="loading">
+      <div class="loading_text">
+        数据大屏加载中...
+      </div>
+    </datav-loading>
+    <Container :options="{width: 3840, height: 2160}" v-else>
+      <div class="header">
+        <top-header></top-header>
+      </div>
+      <div class="separator-wrapper"></div>
+      <div class="center">
+        <div class="left">
+          <div class="left1">
+            <total-user
+              ref="totalUser"
+              :today-user="userData.userToday"
+              :growth-last-day="+userData.userGrowthLastDay || 0"
+              :growth-last-month="+userData.userGrowthLastMonth || 0"
+            ></total-user>
+          </div>
+          <div class="left2">
+            66
+          </div>
+          <div class="left3">
+            66
+          </div>
+          <div class="left4">
+            66
+          </div>
+          <div class="left5">
+            66
+          </div>
+          <div class="left6">
+            66
+          </div>
+        </div>
+        <div class="right"></div>
+      </div>
+    </Container>
+  </div>
+</template>
+
+<script>
+// import { ref } from 'vue'
+import TopHeader from '@/components/TopHeader/index.vue'
+import { useScreenData } from './useScreenData'
+import TotalUser from '@/components/TotalUser'
+
+export default {
+  name: 'HomeView',
+  components: {
+    TopHeader,
+    TotalUser
+  },
+  setup () {
+    const { loading, userData } = useScreenData()
+    console.log(userData)
+
+    return {
+      loading,
+      userData
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.home{
+  // .test{
+  //   width: 100px;
+  //   height: 100px;
+  //   background: pink;
+  //   font-size: 24px;
+  //   color: #000;
+  //   transform: scale(1, 1);
+  // }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(29, 29, 29);
+  color: #fff;
+  font-size: 48px;
+  #datav_container{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    width: 100%;
+    height: 100%;
+    .header {
+      width: 100%;
+      height: 167px;
+    }
+    .separator-wrapper {
+      height: 10px;
+      width: 100%;
+      background: rgb(92, 88, 89);
+      filter: blur(0px);
+    }
+    .center{
+      flex: 1;
+      display: flex;
+      .left{
+        flex: 0 0 860px;
+        display: flex;
+        flex-direction: column;
+        width: 860px;
+        height: 100%;
+        margin: 0 10px;
+        // padding-bottom: 20px;
+        box-sizing: border-box;
+        .left1, .left2, .left3, .left4, .left5, .left6 {
+          padding-bottom: 20px;
+        }
+        .left1{
+          height: 300px;
+        }
+        .left2{
+          height: 300px;
+          background: grey;
+        }
+        .left3{
+          height: 280px;
+          background: grey;
+        }
+        .left4{
+          height: 230px;
+          background: grey;
+        }
+        .left5{
+          height: 360px;
+          background: grey;
+        }
+        .left6{
+          height: 360px;
+          background: grey;
+        }
+      }
+      .right{
+
+      }
+    }
+  }
+}
+</style>

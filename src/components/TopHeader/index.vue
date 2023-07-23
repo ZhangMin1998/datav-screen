@@ -5,8 +5,8 @@
       src="https://datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/54149aa06f26afcf26f42d66c999ee8b.png"
     />
     <div class="logo_text">
-      <div class="cn_text">互联网产业全球数据大盘</div>
-      <div class="en_text">Imooc Delivery Overview of Business Data</div>
+      <div class="cn_text">深圳外卖产业数据大盘</div>
+      <div class="en_text">Shenzhen Delivery Overview of Business Data</div>
     </div>
     <div class="right_text">
       <img
@@ -21,18 +21,18 @@
 
 <script>
 import { clock as useClock } from './clock'
-import { getUserData } from '@/api/index'
+// import { getUserData } from '@/api/index'
 
 export default {
   name: 'topHeader',
   setup () {
     const { date, time } = useClock()
 
-    const init = async () => {
-      const res = await getUserData()
-      console.log(res)
-    }
-    init()
+    // const init = async () => {
+    //   const res = await getUserData()
+    //   console.log(res)
+    // }
+    // init()
 
     return {
       date,
