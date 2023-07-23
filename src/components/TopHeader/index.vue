@@ -9,10 +9,13 @@
       <div class="en_text">Shenzhen Delivery Overview of Business Data</div>
     </div>
     <div class="right_text">
-      <img
+      <div class="right_logo">
+        <datav-loading width="100" height="100"></datav-loading>
+      </div>
+      <!-- <img
         class="right_logo"
         src="https://img.alicdn.com/tfs/TB1Kbzuq.z1gK0jSZLeXXb9kVXa-600-500.png"
-      />
+      /> -->
       <div class="date">{{ date }}</div>
       <div class="time">{{ time }}</div>
     </div>
@@ -74,10 +77,15 @@ export default {
   .right_text {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     img {
       width: 363px;
       height: 150px;
+    }
+    .right_logo{
+      :deep(.loading_content) {
+        margin-top: 0;
+      }
     }
 
     .date {
