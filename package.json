@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
+    "axios": "^1.4.0",
     "core-js": "^3.8.3",
     "datav-screen-libs": "1.0.0",
     "echarts": "^5.4.3",

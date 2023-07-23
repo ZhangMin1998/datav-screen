@@ -21,10 +21,18 @@
 
 <script>
 import { clock as useClock } from './clock'
+import { getUserData } from '@/api/index'
+
 export default {
   name: 'topHeader',
   setup () {
     const { date, time } = useClock()
+
+    const init = async () => {
+      const res = await getUserData()
+      console.log(res)
+    }
+    init()
 
     return {
       date,
