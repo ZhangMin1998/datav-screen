@@ -69,8 +69,8 @@ export default {
 .total_user{
   width: 100%;
   height: 100%;
-  background: rgb(66, 68, 70);
-  box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
+  background: rgb(32, 51, 70);
+  box-shadow: 0 10px 10px rgba(59, 52, 52, 0.3);
   padding: 20px 40px;
   box-sizing: border-box;
   .title{
@@ -93,10 +93,10 @@ export default {
     font-family: DIN;
     letter-spacing: 2px;
     .percent-text-1{
-      color: rgb(197, 251, 121);
+      color: rgb(34, 162, 195);
     }
     .percent-text-2{
-      color: rgb(99, 169, 0);
+      color: rgb(36, 134, 185);
       margin-left: 20px;
     }
   }

@@ -48,7 +48,7 @@ export default {
   height: 100%;
   padding: 0 64px;
   box-sizing: border-box;
-  background: rgb(36, 31, 32);
+  background: rgb(25, 34, 51);
   display: flex;
   align-items: center;
   .logo {
@@ -68,6 +68,7 @@ export default {
       color: rgb(255, 255, 255);
       font-size: 35px;
       letter-spacing: 1px;
+      font-family: 'Verdana';
     }
   }
   .right_text {
@@ -90,7 +91,7 @@ export default {
     .time {
       width: 220px;
       font-size: 52px;
-      color: rgb(197, 251, 121);
+      color: rgb(36, 134, 185);
       font-family: DIN;
       font-weight: 500;
       margin-left: 30px;

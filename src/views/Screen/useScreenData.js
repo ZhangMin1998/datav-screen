@@ -4,12 +4,16 @@ import { getUserData } from '@/api' // getMapData
 export function useScreenData () {
   const loading = ref(true)
   const userData = reactive({})
+  const ageData = ref([])
   onMounted(async () => {
     const res = await getUserData()
     console.log(res)
     userData.userToday = res.userToday
-    userData.userGrowthLastDay = res.userGrowthLastDay
-    userData.userGrowthLastMonth = res.userGrowthLastMonth
+    userData.userGrowthLastDay = res.userGrowthLastDay / 2
+    userData.userGrowthLastMonth = res.userGrowthLastMonth / 2
+    userData.averageAge = Number(res.averageAge)
+
+    ageData.value = res.age
 
     setTimeout(() => {
       loading.value = false
@@ -18,6 +22,7 @@ export function useScreenData () {
 
   return {
     loading,
-    userData
+    userData,
+    ageData
   }
 }

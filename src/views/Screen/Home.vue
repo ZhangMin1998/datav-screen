@@ -19,12 +19,16 @@
             <total-user
               ref="totalUser"
               :today-user="userData.userToday"
-              :growth-last-day="+userData.userGrowthLastDay || 0"
-              :growth-last-month="+userData.userGrowthLastMonth || 0"
+              :growth-last-day="+userData.userGrowthLastDay"
+              :growth-last-month="+userData.userGrowthLastMonth"
             ></total-user>
           </div>
           <div class="left2">
-            66
+            <average-age
+              ref="averageAge"
+              :data="ageData"
+              :avgAge="userData.averageAge"
+            ></average-age>
           </div>
           <div class="left3">
             66
@@ -50,20 +54,23 @@
 import TopHeader from '@/components/TopHeader/index.vue'
 import { useScreenData } from './useScreenData'
 import TotalUser from '@/components/TotalUser'
+import AverageAge from '@/components/AverageAge'
 
 export default {
   name: 'HomeView',
   components: {
     TopHeader,
-    TotalUser
+    TotalUser,
+    AverageAge
   },
   setup () {
-    const { loading, userData } = useScreenData()
+    const { loading, userData, ageData } = useScreenData()
     console.log(userData)
 
     return {
       loading,
-      userData
+      userData,
+      ageData
     }
   }
 }
@@ -86,7 +93,7 @@ export default {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: rgb(29, 29, 29);
+  background: rgb(6, 9, 19);
   color: #fff;
   font-size: 48px;
   #datav_container{
@@ -103,7 +110,7 @@ export default {
     .separator-wrapper {
       height: 10px;
       width: 100%;
-      background: rgb(92, 88, 89);
+      background: rgb(53, 62, 80);
       filter: blur(0px);
     }
     .center{
@@ -126,7 +133,6 @@ export default {
         }
         .left2{
           height: 300px;
-          background: grey;
         }
         .left3{
           height: 280px;

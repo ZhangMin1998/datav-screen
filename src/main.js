@@ -8,7 +8,7 @@ import dataView from '@jiaminghi/data-view'
 import datav from 'datav-screen-libs'
 // import datavTestComponent from 'datav-screen-libs/src/components/Test/index'
 // import datavTestComponent2 from 'datav-screen-libs/src/components/Test2/index'
-import Echarts from 'vue-echarts'
+import VueECharts from 'vue-echarts'
 import countTo from 'vue3-count-to'
 // app.js 19.61kib (3个组件 未按需加载)
 // app.js 19.53kib (1个组件 未按需加载)
@@ -19,5 +19,5 @@ createApp(App)
   .use(dataView)
   .use(datav)
   .use(countTo)
-  .component('vue-echarts', Echarts)
+  .component('vue-echarts', VueECharts)
   .mount('#app')
