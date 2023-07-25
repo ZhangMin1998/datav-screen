@@ -78,8 +78,8 @@ export default {
         },
         color,
         grid: {
-          left: 0, // 40
-          right: 0, // 40
+          left: 40, // 40
+          right: 40, // 40
           top: 0
         },
         dataset: {
@@ -157,6 +157,7 @@ export default {
   .title_box{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     .left{
       .title{
         font-size: 32px;
@@ -168,8 +169,8 @@ export default {
       }
     }
     .right{
-      flex: 1;
-      margin-left: 40px;
+      // flex: 1;
+      // margin-left: 90px;
       font-weight: bold;
       .age{
         font-size: 68px;

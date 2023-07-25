@@ -34,7 +34,7 @@
             <total-device :data="deviceData"></total-device>
           </div>
           <div class="left4">
-            66
+            <total-gender :data="userData.gender"></total-gender>
           </div>
           <div class="left5">
             66
@@ -56,6 +56,7 @@ import { useScreenData } from './useScreenData'
 import TotalUser from '@/components/TotalUser'
 import AverageAge from '@/components/AverageAge'
 import TotalDevice from '@/components/TotalDevice'
+import TotalGender from '@/components/TotalGender'
 
 export default {
   name: 'HomeView',
@@ -63,7 +64,8 @@ export default {
     TopHeader,
     TotalUser,
     AverageAge,
-    TotalDevice
+    TotalDevice,
+    TotalGender
   },
   setup () {
     const { loading, userData, ageData, deviceData } = useScreenData()
@@ -144,11 +146,11 @@ export default {
         }
         .left4{
           height: 230px;
-          background: grey;
+          // background: grey;
         }
         .left5{
           height: 360px;
-          // background: grey;
+          background: grey;
         }
         .left6{
           height: 360px;
