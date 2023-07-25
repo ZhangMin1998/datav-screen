@@ -31,7 +31,7 @@
             ></average-age>
           </div>
           <div class="left3">
-            66
+            <total-device :data="deviceData"></total-device>
           </div>
           <div class="left4">
             66
@@ -55,22 +55,25 @@ import TopHeader from '@/components/TopHeader/index.vue'
 import { useScreenData } from './useScreenData'
 import TotalUser from '@/components/TotalUser'
 import AverageAge from '@/components/AverageAge'
+import TotalDevice from '@/components/TotalDevice'
 
 export default {
   name: 'HomeView',
   components: {
     TopHeader,
     TotalUser,
-    AverageAge
+    AverageAge,
+    TotalDevice
   },
   setup () {
-    const { loading, userData, ageData } = useScreenData()
-    console.log(userData)
+    const { loading, userData, ageData, deviceData } = useScreenData()
+    console.log('home', loading, userData, ageData, deviceData)
 
     return {
       loading,
       userData,
-      ageData
+      ageData,
+      deviceData
     }
   }
 }
@@ -125,6 +128,7 @@ export default {
         margin: 0 10px;
         // padding-bottom: 20px;
         box-sizing: border-box;
+        background: rgb(51, 64, 97);
         .left1, .left2, .left3, .left4, .left5, .left6 {
           padding-bottom: 20px;
         }
@@ -136,7 +140,7 @@ export default {
         }
         .left3{
           height: 280px;
-          background: grey;
+          // background: grey;
         }
         .left4{
           height: 230px;
@@ -144,11 +148,11 @@ export default {
         }
         .left5{
           height: 360px;
-          background: grey;
+          // background: grey;
         }
         .left6{
           height: 360px;
-          background: grey;
+          // background: grey;
         }
       }
       .right{

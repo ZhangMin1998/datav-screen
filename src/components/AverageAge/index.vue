@@ -46,7 +46,7 @@ export default {
   name: 'average_age',
   props: {
     avgAge: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     data: {
@@ -78,8 +78,8 @@ export default {
         },
         color,
         grid: {
-          left: 40,
-          right: 40,
+          left: 0, // 40
+          right: 0, // 40
           top: 0
         },
         dataset: {
@@ -137,7 +137,7 @@ export default {
     }
     onMounted(() => {
       getOptions()
-      console.log(props.avgAge)
+      // console.log(props.avgAge)
     })
     return {
       startAge
