@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 
 export default {
   name: 'total_gender',
@@ -59,6 +59,11 @@ export default {
       endMale.value = newData[0].value
       startFemale.value = endFemale.value
       endFemale.value = newData[1].value
+    })
+
+    onMounted(() => {
+      endMale.value = props.data[0].value
+      endFemale.value = props.data[1].value
     })
 
     return {
