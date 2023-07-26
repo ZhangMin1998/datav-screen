@@ -37,7 +37,7 @@
             <total-gender :data="userData.gender"></total-gender>
           </div>
           <div class="left5">
-            66
+            <line-chart :data="userData.rider"></line-chart>
           </div>
           <div class="left6">
             66
@@ -57,6 +57,7 @@ import TotalUser from '@/components/TotalUser'
 import AverageAge from '@/components/AverageAge'
 import TotalDevice from '@/components/TotalDevice'
 import TotalGender from '@/components/TotalGender'
+import LineChart from '@/components/LineChart'
 
 export default {
   name: 'HomeView',
@@ -65,7 +66,8 @@ export default {
     TotalUser,
     AverageAge,
     TotalDevice,
-    TotalGender
+    TotalGender,
+    LineChart
   },
   setup () {
     const { loading, userData, ageData, deviceData } = useScreenData()
@@ -150,11 +152,11 @@ export default {
         }
         .left5{
           height: 360px;
-          background: grey;
+          // background: grey;
         }
         .left6{
           height: 360px;
-          // background: grey;
+          background: grey;
         }
       }
       .right{
