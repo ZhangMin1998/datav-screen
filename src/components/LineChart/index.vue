@@ -17,12 +17,12 @@ export default {
   name: 'line_chart',
   props: {
     data: {
-      type: Array,
-      defaule: () => []
+      type: Object,
+      defaule: () => {}
     }
   },
   setup (props) {
-    console.log(props.data)
+    // console.log(props.data)
     const chart = ref(null)
     const colors = ['rgb(209,248,139)', 'rgb(14, 176, 201)', 'rgb(124,136,146)']
     let currentChart = 0

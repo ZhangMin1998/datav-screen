@@ -40,7 +40,7 @@
             <line-chart :data="userData.rider"></line-chart>
           </div>
           <div class="left6">
-            66
+            <bar-chart :data="userData.category" />
           </div>
         </div>
         <div class="right"></div>
@@ -58,6 +58,7 @@ import AverageAge from '@/components/AverageAge'
 import TotalDevice from '@/components/TotalDevice'
 import TotalGender from '@/components/TotalGender'
 import LineChart from '@/components/LineChart'
+import BarChart from '@/components/BarChart'
 
 export default {
   name: 'HomeView',
@@ -67,7 +68,8 @@ export default {
     AverageAge,
     TotalDevice,
     TotalGender,
-    LineChart
+    LineChart,
+    BarChart
   },
   setup () {
     const { loading, userData, ageData, deviceData } = useScreenData()
@@ -156,7 +158,7 @@ export default {
         }
         .left6{
           height: 360px;
-          background: grey;
+          // background: grey;
         }
       }
       .right{

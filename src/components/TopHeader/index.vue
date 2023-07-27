@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { clock as useClock } from './clock'
+import { clock as useClock } from '@/utils/clock'
 // import { getUserData } from '@/api/index'
 
 export default {
@@ -107,3 +107,4 @@ export default {
   }
 }
 </style>
+../../utils/clock
