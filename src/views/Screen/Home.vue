@@ -43,7 +43,11 @@
             <bar-chart :data="userData.category" />
           </div>
         </div>
-        <div class="right"></div>
+        <div class="right">
+          <div class="right_top1">
+            <center-header :data="userData"></center-header>
+          </div>
+        </div>
       </div>
     </Container>
   </div>
@@ -59,6 +63,7 @@ import TotalDevice from '@/components/TotalDevice'
 import TotalGender from '@/components/TotalGender'
 import LineChart from '@/components/LineChart'
 import BarChart from '@/components/BarChart'
+import CenterHeader from '@/components/CenterHeader'
 
 export default {
   name: 'HomeView',
@@ -69,7 +74,8 @@ export default {
     TotalDevice,
     TotalGender,
     LineChart,
-    BarChart
+    BarChart,
+    CenterHeader
   },
   setup () {
     const { loading, userData, ageData, deviceData } = useScreenData()
@@ -162,7 +168,18 @@ export default {
         }
       }
       .right{
-
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin: 0 10px;
+        max-width: 2960px;
+        overflow: hidden;
+        .right_top1{
+          width: 100%;
+          height: 206px;
+          background: grey;
+        }
       }
     }
   }
