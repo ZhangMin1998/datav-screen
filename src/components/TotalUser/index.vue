@@ -14,7 +14,7 @@
     <div class="percent-text">
       <span class="percent-text-1">每日增长率:
         <count-to
-        :start-val="startVal"
+        :start-val="startPercent"
         :end-val="Number(growthLastDay)"
         :duration="1000"
         suffix="%"
@@ -24,7 +24,7 @@
       </span>
       <span class="percent-text-2">每月增长率:
         <count-to
-        :start-val="startVal"
+        :start-val="startPercent2"
         :end-val="Number(growthLastMonth)"
         :duration="1000"
         suffix="%"
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 export default {
   name: 'totalUser',
   props: {
@@ -56,10 +56,24 @@ export default {
       default: 0
     }
   },
-  setup () {
+  setup (props) {
     const startVal = ref(0)
+    const startPercent = ref(0)
+    const startPercent2 = ref(0)
+
+    watch(() => props.todayUser, (newVal, oldVal) => {
+      startVal.value = oldVal || 0
+    })
+    watch(() => props.growthLastDay, (newVal, oldVal) => {
+      startPercent.value = oldVal || 0
+    })
+    watch(() => props.growthLastMonth, (newVal, oldVal) => {
+      startPercent2.value = oldVal || 0
+    })
     return {
-      startVal
+      startVal,
+      startPercent,
+      startPercent2
     }
   }
 }
