@@ -59,7 +59,9 @@
                 <country-category :data="['订单量', '销售额', '用户数', '退单量']"></country-category>
               </div>
               <div class="right_left3">
-                <average-view :data="realTimeOrder"></average-view>
+                <datav-fly-box :duration="2">
+                  <average-view :data="realTimeOrder"></average-view>
+                </datav-fly-box>
               </div>
               <div class="right_left4">
                 666
