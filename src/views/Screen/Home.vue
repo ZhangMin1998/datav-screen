@@ -47,6 +47,9 @@
           <div class="right_top1">
             <center-header :data="userData"></center-header>
           </div>
+          <div class="right_top2">
+            <country-category :data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"></country-category>
+          </div>
         </div>
       </div>
     </Container>
@@ -64,6 +67,7 @@ import TotalGender from '@/components/TotalGender'
 import LineChart from '@/components/LineChart'
 import BarChart from '@/components/BarChart'
 import CenterHeader from '@/components/CenterHeader'
+import CountryCategory from '@/components/CountryCategory'
 
 export default {
   name: 'HomeView',
@@ -75,7 +79,8 @@ export default {
     TotalGender,
     LineChart,
     BarChart,
-    CenterHeader
+    CenterHeader,
+    CountryCategory
   },
   setup () {
     const { loading, userData, ageData, deviceData } = useScreenData()
@@ -179,6 +184,12 @@ export default {
           width: 100%;
           height: 206px;
           background: grey;
+          margin-bottom: 20px;
+        }
+        .right_top2 {
+          width: 100%;
+          height: 48px;
+          // margin-bottom: 20px;
         }
       }
     }
