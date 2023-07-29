@@ -50,6 +50,25 @@
           <div class="right_top2">
             <country-category :data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"></country-category>
           </div>
+          <div class="right_bottom">
+            <div class="right_left">
+              <div class="right_left1">
+                666
+              </div>
+              <div class="right_left2">
+                <country-category :data="['订单量', '销售额', '用户数', '退单量']"></country-category>
+              </div>
+              <div class="right_left3">
+                <average-view :data="realTimeOrder"></average-view>
+              </div>
+              <div class="right_left4">
+                666
+              </div>
+            </div>
+            <div class="right_right">
+
+            </div>
+          </div>
         </div>
       </div>
     </Container>
@@ -68,6 +87,7 @@ import LineChart from '@/components/LineChart'
 import BarChart from '@/components/BarChart'
 import CenterHeader from '@/components/CenterHeader'
 import CountryCategory from '@/components/CountryCategory'
+import AverageView from '@/components/AverageView'
 
 export default {
   name: 'HomeView',
@@ -80,17 +100,19 @@ export default {
     LineChart,
     BarChart,
     CenterHeader,
-    CountryCategory
+    CountryCategory,
+    AverageView
   },
   setup () {
-    const { loading, userData, ageData, deviceData } = useScreenData()
-    console.log('home', loading, userData, ageData, deviceData)
+    const { loading, userData, ageData, deviceData, realTimeOrder } = useScreenData()
+    console.log('home', realTimeOrder)
 
     return {
       loading,
       userData,
       ageData,
-      deviceData
+      deviceData,
+      realTimeOrder
     }
   }
 }
@@ -189,7 +211,38 @@ export default {
         .right_top2 {
           width: 100%;
           height: 48px;
-          // margin-bottom: 20px;
+          margin-bottom: 20px;
+        }
+        .right_bottom{
+          flex: 1;
+          display: flex;
+          .right_left{
+            display: flex;
+            flex-direction: column;
+            width: 1917px;
+            .right_left1{
+              height: 999px;
+              background-color: #333;
+            }
+            .right_left2{
+              height: 80px;
+              box-sizing: border-box;
+              padding-top: 20px;
+            }
+            .right_left3{
+              height: 350px;
+              margin-top: 10px;
+            }
+            .right_left4{
+              height: 220px;
+              margin-top: 10px;
+              background-color: #666;
+            }
+          }
+          .right_right{
+            flex: 1;
+            background-color: aqua;
+          }
         }
       }
     }
