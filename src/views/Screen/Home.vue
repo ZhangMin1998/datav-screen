@@ -64,7 +64,7 @@
                 </datav-fly-box>
               </div>
               <div class="right_left4">
-                666
+                <schedule-view></schedule-view>
               </div>
             </div>
             <div class="right_right">
@@ -90,6 +90,7 @@ import BarChart from '@/components/BarChart'
 import CenterHeader from '@/components/CenterHeader'
 import CountryCategory from '@/components/CountryCategory'
 import AverageView from '@/components/AverageView'
+import ScheduleView from '@/components/ScheduleView'
 
 export default {
   name: 'HomeView',
@@ -103,7 +104,8 @@ export default {
     BarChart,
     CenterHeader,
     CountryCategory,
-    AverageView
+    AverageView,
+    ScheduleView
   },
   setup () {
     const { loading, userData, ageData, deviceData, realTimeOrder } = useScreenData()
@@ -184,7 +186,7 @@ export default {
           // background: grey;
         }
         .left4{
-          height: 230px;
+          height: 264px;
           // background: grey;
         }
         .left5{
