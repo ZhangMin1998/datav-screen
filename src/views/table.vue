@@ -17,14 +17,29 @@ export default {
   setup () {
     const config = ref({})
     const headerData = ['姓名', '年龄', '城市']
-    const headerStyle = [{ color: 'pink', width: '100px' }]
+    const headerStyle = [{ color: 'pink', width: '100px' }] // , width: '100px'
+    const data = [
+      ['小明', 28, '深圳'],
+      ['小白', 38, '广州'],
+      ['老莫', 48, '上海'],
+      ['老莫', 48, '上海'],
+      ['老莫', 48, '上海'],
+      ['老莫66', 48, '上海'],
+      ['老莫77', 48, '上海'],
+      ['老莫88', 48, '上海'],
+      ['老莫99', 48, '上海'],
+      ['老莫10', 48, '上海'],
+      ['老莫11', 48, '上海']
+    ]
 
     config.value = {
       headerData,
       headerStyle,
       headerBg: '#999',
       headerHeight: 40,
-      headerIndex: true
+      headerIndex: true,
+      data,
+      rowNum: 10
     }
     return {
       config
