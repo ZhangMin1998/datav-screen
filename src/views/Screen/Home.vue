@@ -68,7 +68,12 @@
               </div>
             </div>
             <div class="right_right">
-
+              <div class="right_right1">
+                <right-top1 :data="userData.areaSales"></right-top1>
+              </div>
+              <div class="right_right2">
+                66
+              </div>
             </div>
           </div>
         </div>
@@ -91,6 +96,7 @@ import CenterHeader from '@/components/CenterHeader'
 import CountryCategory from '@/components/CountryCategory'
 import AverageView from '@/components/AverageView'
 import ScheduleView from '@/components/ScheduleView'
+import RightTop1 from '@/components/RightTop1'
 
 export default {
   name: 'HomeView',
@@ -105,7 +111,8 @@ export default {
     CenterHeader,
     CountryCategory,
     AverageView,
-    ScheduleView
+    ScheduleView,
+    RightTop1
   },
   setup () {
     const { loading, userData, ageData, deviceData, realTimeOrder } = useScreenData()
@@ -245,7 +252,24 @@ export default {
           }
           .right_right{
             flex: 1;
-            background-color: aqua;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 20px;
+            // margin-right: 20px;
+            .right_right1{
+              width: 100%;
+              height: 999px;
+              // padding-right: 10px;
+              box-sizing: border-box;
+              background-color: rgb(64, 87, 87);
+            }
+            .right_right2{
+              width: 100%;
+              height: 650px;
+              margin-top: 20px;
+              // padding-right: 10px;
+              background-color: rgb(31, 78, 78);
+            }
           }
         }
       }
