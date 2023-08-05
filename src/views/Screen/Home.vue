@@ -261,7 +261,6 @@ export default {
               height: 999px;
               // padding-right: 10px;
               box-sizing: border-box;
-              background-color: rgb(64, 87, 87);
             }
             .right_right2{
               width: 100%;
