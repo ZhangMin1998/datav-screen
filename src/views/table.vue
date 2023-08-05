@@ -35,8 +35,8 @@ export default {
       ['老莫77', 48, '上海'],
       ['老莫88', 48, '上海'],
       ['老莫99', 48, '上海'],
-      ['老莫10', 48, '上海'],
-      ['老莫11', 48, '上海']
+      ['老莫10', 48, '上海']
+      // ['老莫11', 48, '上海']
     ]
 
     config.value = {
@@ -47,7 +47,7 @@ export default {
       headerHeight: 40,
       headerIndex: true,
       data,
-      rowNum: 5,
+      rowNum: 10,
       rowBg,
       aligns,
       headerFontSize,
