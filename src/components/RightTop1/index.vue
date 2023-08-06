@@ -97,6 +97,7 @@ export default {
         aligns,
         duration
       }
+      console.log('config.value', config.value)
     }
 
     watch(() => props.data, () => {

@@ -1,7 +1,7 @@
 import { debounce, observerDomResize } from './util'
 
 export default {
-  data() {
+  data () {
     return {
       dom: '',
       width: 0,
@@ -13,13 +13,13 @@ export default {
     }
   },
   methods: {
-    async autoResizeMixinInit() {
+    async autoResizeMixinInit () {
       await this.initWH(false)
       this.getDebounceInitWHFun()
       this.bindDomResizeCallback()
       if (typeof this.afterAutoResizeMixinInit === 'function') this.afterAutoResizeMixinInit()
     },
-    initWH(resize = true) {
+    initWH (resize = true) {
       const { $nextTick, $refs, ref, onResize } = this
 
       return new Promise(resolve => {
@@ -45,24 +45,24 @@ export default {
         })
       })
     },
-    getDebounceInitWHFun() {
+    getDebounceInitWHFun () {
       this.debounceInitWHFun = debounce(100, this.initWH)
     },
-    bindDomResizeCallback() {
+    bindDomResizeCallback () {
       this.domObserver = observerDomResize(this.dom, this.debounceInitWHFun)
       window.addEventListener('resize', this.debounceInitWHFun)
     },
-    unbindDomResizeCallback() {
+    unbindDomResizeCallback () {
       this.domObserver.disconnect()
       this.domObserver.takeRecords()
       this.domObserver = null
       window.removeEventListener('resize', this.debounceInitWHFun)
     }
   },
-  mounted() {
+  mounted () {
     this.autoResizeMixinInit()
   },
-  beforeDestroy() {
+  beforeDestroy () {
     const { unbindDomResizeCallback } = this
     unbindDomResizeCallback()
   }

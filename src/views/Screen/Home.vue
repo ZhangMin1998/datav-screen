@@ -72,7 +72,7 @@
                 <right-top1 :data="userData.areaSales"></right-top1>
               </div>
               <div class="right_right2">
-                66
+                <activate-user :data="userData.areaTop"></activate-user>
               </div>
             </div>
           </div>
@@ -97,6 +97,7 @@ import CountryCategory from '@/components/CountryCategory'
 import AverageView from '@/components/AverageView'
 import ScheduleView from '@/components/ScheduleView'
 import RightTop1 from '@/components/RightTop1'
+import ActivateUser from '@/components/ActivateUser'
 
 export default {
   name: 'HomeView',
@@ -112,7 +113,8 @@ export default {
     CountryCategory,
     AverageView,
     ScheduleView,
-    RightTop1
+    RightTop1,
+    ActivateUser
   },
   setup () {
     const { loading, userData, ageData, deviceData, realTimeOrder } = useScreenData()
@@ -266,8 +268,6 @@ export default {
               width: 100%;
               height: 650px;
               margin-top: 20px;
-              // padding-right: 10px;
-              background-color: rgb(31, 78, 78);
             }
           }
         }
