@@ -53,7 +53,8 @@
           <div class="right_bottom">
             <div class="right_left">
               <div class="right_left1">
-                666
+                999
+                <!-- <earth :data="mapData" /> -->
               </div>
               <div class="right_left2">
                 <country-category :data="['订单量', '销售额', '用户数', '退单量']"></country-category>
@@ -98,6 +99,8 @@ import AverageView from '@/components/AverageView'
 import ScheduleView from '@/components/ScheduleView'
 import RightTop1 from '@/components/RightTop1'
 import ActivateUser from '@/components/ActivateUser'
+// import Earth from '@/components/Earth/test'
+// import Earth from '@/views/timeLineTest.vue'
 
 export default {
   name: 'HomeView',
@@ -115,9 +118,10 @@ export default {
     ScheduleView,
     RightTop1,
     ActivateUser
+    // Earth
   },
   setup () {
-    const { loading, userData, ageData, deviceData, realTimeOrder } = useScreenData()
+    const { loading, userData, ageData, deviceData, realTimeOrder, mapData } = useScreenData()
     console.log('home', realTimeOrder)
 
     return {
@@ -125,7 +129,8 @@ export default {
       userData,
       ageData,
       deviceData,
-      realTimeOrder
+      realTimeOrder,
+      mapData
     }
   }
 }

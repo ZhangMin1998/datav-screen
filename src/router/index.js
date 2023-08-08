@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/test',
     name: 'test',
-    component: () => import('@/views/table.vue')
+    component: () => import('@/views/timeLineTest.vue')
   }
 ]
 
