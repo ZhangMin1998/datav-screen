@@ -1,6 +1,6 @@
 <template>
   <div class="timeLine">
-    <div id="average-age-chart"></div>
+    <div id="timeLine-chart"></div>
   </div>
 </template>
 
@@ -453,7 +453,7 @@ export default {
             // loop: false,
             autoPlay: true,
             // currentIndex: 2,
-            playInterval: 1000,
+            playInterval: 2000,
             // controlStyle: {
             //     position: 'left'
             // },
@@ -757,7 +757,7 @@ export default {
       }
       let chart = null
       if (!chart) {
-        chart = eCharts.init(document.getElementById('average-age-chart'))
+        chart = eCharts.init(document.getElementById('timeLine-chart'))
       }
       chart.setOption(options.value)
     }
@@ -777,7 +777,7 @@ export default {
 .timeLine{
   width: 100%;
   height: 100%;
-  #average-age-chart{
+  #timeLine-chart{
     width: 100%;
     height: 100%;
   }
