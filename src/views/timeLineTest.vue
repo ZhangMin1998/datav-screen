@@ -497,11 +497,11 @@ export default {
           tooltip: {},
           legend: {
             left: 'right',
-            data: ['第一产业', '第二产业', '第三产业'],
+            data: ['第一产业', '第二产业', '第三产业', 'GDP', '金融', '房地产'],
             selected: {
-              GDP: false,
-              金融: false,
-              房地产: false
+              // GDP: false,
+              // 金融: false,
+              // 房地产: false
             }
           },
           calculable: true,
@@ -569,6 +569,12 @@ export default {
               type: 'pie',
               center: ['75%', '35%'],
               radius: '28%'
+            },
+            {
+              name: '经济形势',
+              type: 'pie',
+              center: ['25%', '35%'],
+              radius: '28%'
             }
           ]
         },
@@ -588,6 +594,13 @@ export default {
                   { name: '第二产业', value: dataMap.dataSI['2002sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2002sum'] }
                 ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2002sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2002sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2002sum'] }
+                ]
               }
             ]
           },
@@ -605,6 +618,13 @@ export default {
                   { name: '第一产业', value: dataMap.dataPI['2003sum'] },
                   { name: '第二产业', value: dataMap.dataSI['2003sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2003sum'] }
+                ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2003sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2003sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2003sum'] }
                 ]
               }
             ]
@@ -624,6 +644,13 @@ export default {
                   { name: '第二产业', value: dataMap.dataSI['2004sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2004sum'] }
                 ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2004sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2004sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2004sum'] }
+                ]
               }
             ]
           },
@@ -641,6 +668,13 @@ export default {
                   { name: '第一产业', value: dataMap.dataPI['2005sum'] },
                   { name: '第二产业', value: dataMap.dataSI['2005sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2005sum'] }
+                ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2005sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2005sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2005sum'] }
                 ]
               }
             ]
@@ -660,6 +694,13 @@ export default {
                   { name: '第二产业', value: dataMap.dataSI['2006sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2006sum'] }
                 ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2006sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2006sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2006sum'] }
+                ]
               }
             ]
           },
@@ -677,6 +718,13 @@ export default {
                   { name: '第一产业', value: dataMap.dataPI['2007sum'] },
                   { name: '第二产业', value: dataMap.dataSI['2007sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2007sum'] }
+                ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2007sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2007sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2007sum'] }
                 ]
               }
             ]
@@ -696,6 +744,13 @@ export default {
                   { name: '第二产业', value: dataMap.dataSI['2008sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2008sum'] }
                 ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2008sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2008sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2008sum'] }
+                ]
               }
             ]
           },
@@ -713,6 +768,13 @@ export default {
                   { name: '第一产业', value: dataMap.dataPI['2009sum'] },
                   { name: '第二产业', value: dataMap.dataSI['2009sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2009sum'] }
+                ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2009sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2009sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2009sum'] }
                 ]
               }
             ]
@@ -732,6 +794,13 @@ export default {
                   { name: '第二产业', value: dataMap.dataSI['2010sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2010sum'] }
                 ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2010sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2010sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2010sum'] }
+                ]
               }
             ]
           },
@@ -749,6 +818,13 @@ export default {
                   { name: '第一产业', value: dataMap.dataPI['2011sum'] },
                   { name: '第二产业', value: dataMap.dataSI['2011sum'] },
                   { name: '第三产业', value: dataMap.dataTI['2011sum'] }
+                ]
+              },
+              {
+                data: [
+                  { name: 'GDP', value: dataMap.dataGDP['2011sum'] },
+                  { name: '金融', value: dataMap.dataFinancial['2011sum'] },
+                  { name: '房地产', value: dataMap.dataEstate['2011sum'] }
                 ]
               }
             ]
