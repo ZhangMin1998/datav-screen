@@ -12,7 +12,7 @@
             <div class="img_box">
               <img :src="item.img">
             </div>
-            <div class="chart" :id="`activate-user-chart${index + 1}`" />
+            <div class="chart" :id="`activate-user-chart${index + 11}`" />
           </div>
           <div class="category_box">
             <country-category :data="['商家', '订单数', '销售额']"></country-category>
@@ -109,7 +109,8 @@ export default {
       nextTick(() => {
         const chart = []
         headerData.value.forEach((item, index) => {
-          const id = `activate-user-chart${index + 1}`
+          const id = `activate-user-chart${index + 11}`
+          console.log(id)
           chart[index] = eCharts.init(document.getElementById(id))
           chart[index].setOption(initChart())
         })

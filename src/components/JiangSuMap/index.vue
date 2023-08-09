@@ -22,7 +22,7 @@ export default {
       fetch('http://www.youbaobao.xyz/datav-res/datav/jiangsuMapData.json')
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+          // console.log(data)
 
           const center = {
             南京市: [118.767413, 32.041544],
@@ -43,6 +43,15 @@ export default {
           // 注册地图
           eCharts.registerMap('jiangsu', data)
           options.value = {
+            visualMap: {
+              show: true,
+              max: 100,
+              hoverLink: true,
+              seriesIndex: [0],
+              inRange: {
+                color: ['#A5DCF4', '#0f85f4']
+              }
+            },
             geo: [{
               map: 'jiangsu',
               roam: false, // 是否允许鼠标滚轮缩放
@@ -66,7 +75,7 @@ export default {
             }],
             series: [{
               type: 'map',
-              mapType: 'jiangsu',
+              map: 'jiangsu',
               geoIndex: -1,
               zoom: 1.1, // 默认显示级别
               label: {

@@ -83,6 +83,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 // import { ref } from 'vue'
 import TopHeader from '@/components/TopHeader/index.vue'
 import { useScreenData } from './useScreenData'
@@ -98,8 +99,9 @@ import AverageView from '@/components/AverageView'
 import ScheduleView from '@/components/ScheduleView'
 import RightTop1 from '@/components/RightTop1'
 import ActivateUser from '@/components/ActivateUser'
-import Earth from '@/components/Earth/test'
+// import Earth from '@/components/Earth/test'
 // import Earth from '@/views/timeLineTest.vue'
+import Earth from '@/components/JiangSuMap/index'
 
 export default {
   name: 'HomeView',

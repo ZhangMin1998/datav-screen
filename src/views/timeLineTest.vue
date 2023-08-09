@@ -1,6 +1,6 @@
 <template>
   <div class="timeLine">
-    <div id="average-age-chart"></div>
+    <div id="timeLineChart"></div>
   </div>
 </template>
 
@@ -833,7 +833,7 @@ export default {
       }
       let chart = null
       if (!chart) {
-        chart = eCharts.init(document.getElementById('average-age-chart'))
+        chart = eCharts.init(document.getElementById('timeLineChart'))
       }
       chart.setOption(options.value)
     }
@@ -853,7 +853,7 @@ export default {
 .timeLine{
   width: 100%;
   height: 100%;
-  #average-age-chart{
+  #timeLineChart{
     width: 100%;
     height: 100%;
   }
