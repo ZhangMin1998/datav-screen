@@ -22,7 +22,16 @@ export default {
       fetch('http://www.youbaobao.xyz/datav-res/datav/jiangsuMapData.json')
         .then(response => response.json())
         .then(data => {
-          // console.log(data)
+          console.log(data)
+          const _center = []
+          data.features.forEach(item => {
+            if (item.properties) {
+              _center.push({
+                key: item.properties.name,
+                value: item.properties.center
+              })
+            }
+          })
 
           const center = {
             南京市: [118.767413, 32.041544],
@@ -73,38 +82,151 @@ export default {
                 show: true
               }
             }],
-            series: [{
-              type: 'map',
-              map: 'jiangsu',
-              geoIndex: -1,
-              zoom: 1.1, // 默认显示级别
-              label: {
-                show: true,
-                color: '#ffffff',
-                emphasis: {
-                  color: '#fff',
-                  show: true
-                }
-              },
-              itemStyle: {
-                normal: {
-                  borderColor: '#2980b9',
-                  borderWidth: 1,
-                  areaColor: '#12235c'
+            series: [
+              {
+                type: 'map',
+                map: 'jiangsu',
+                geoIndex: -1,
+                zoom: 1.1, // 默认显示级别
+                label: {
+                  show: true,
+                  color: '#ffffff',
+                  emphasis: {
+                    color: '#fff',
+                    show: true
+                  }
                 },
-                emphasis: {
-                  areaColor: '#FA8C16',
-                  borderWidth: 0,
-                  color: 'green'
+                itemStyle: {
+                  normal: {
+                    borderColor: '#2980b9',
+                    borderWidth: 1,
+                    areaColor: '#12235c'
+                  },
+                  emphasis: {
+                    areaColor: '#FA8C16',
+                    borderWidth: 0,
+                    color: 'green'
+                  }
+                },
+                data: Object.keys(center).map(name => {
+                  return {
+                    name: name,
+                    value: Math.random() * 100
+                  }
+                })
+              },
+              {
+                type: 'effectScatter',
+                coordinateSystem: 'geo', // 使用的坐标系
+                z: 5, // z值小的图形会被z值大的图形覆盖
+                symbolSize: 14, // 标记的大小
+                data: [{value: _center[0].value, city: _center[0].key}],
+                itemStyle: {
+                  color: '#feae21'
+                },
+                label: {
+                  normal: {
+                    show: true,
+                    formatter: function (params) {
+                      return '{fline|地点：' + params.data.city + '}\n{tline|' + (params.data.info || '发生xx集件') + '}'
+                    },
+                    position: 'top',
+                    backgroundColor: 'rgba(254,174,33,.8)',
+                    padding: [0, 0],
+                    borderRadius: 3,
+                    lineHeight: 32,
+                    color: '#f7fafb',
+                    rich: {
+                      fline: {
+                        padding: [0, 10, 10, 10],
+                        color: '#fff'
+                      },
+                      tline: {
+                        padding: [10, 10, 0, 10],
+                        color: '#fff'
+                      }
+                    }
+                  },
+                  emphasis: {
+                    show: true
+                  }
                 }
               },
-              data: Object.keys(center).map(name => {
-                return {
-                  name: name,
-                  value: Math.random() * 100
+              {
+                type: 'effectScatter',
+                coordinateSystem: 'geo', // 使用的坐标系
+                z: 5, // z值小的图形会被z值大的图形覆盖
+                symbolSize: 14, // 标记的大小
+                data: [{value: _center[1].value, city: _center[1].key}],
+                itemStyle: {
+                  color: '#e93f42'
+                },
+                label: {
+                  normal: {
+                    show: true,
+                    formatter: function (params) {
+                      return '{fline|地点：' + params.data.city + '}\n{tline|' + (params.data.info || '发生xx集件') + '}'
+                    },
+                    position: 'top',
+                    backgroundColor: 'rgba(233,63,66,.9)',
+                    padding: [0, 0],
+                    borderRadius: 3,
+                    lineHeight: 32,
+                    color: '#ffffff',
+                    rich: {
+                      fline: {
+                        padding: [0, 10, 10, 10],
+                        color: '#fff'
+                      },
+                      tline: {
+                        padding: [10, 10, 0, 10],
+                        color: '#fff'
+                      }
+                    }
+                  },
+                  emphasis: {
+                    show: true
+                  }
                 }
-              })
-            }]
+              },
+              {
+                type: 'effectScatter',
+                coordinateSystem: 'geo', // 使用的坐标系
+                z: 5, // z值小的图形会被z值大的图形覆盖
+                symbolSize: 14, // 标记的大小
+                data: [{value: _center[2].value, city: _center[2].key}],
+                itemStyle: {
+                  color: '#08baec'
+                },
+                label: {
+                  normal: {
+                    show: true,
+                    formatter: function (params) {
+                      return '{fline|地点：' + params.data.city + '}\n{tline|' + (params.data.info || '发生xx集件') + '}'
+                    },
+                    position: 'top',
+                    backgroundColor: 'rgba(8,186,236,.9)',
+                    padding: [0, 0],
+                    borderRadius: 3,
+                    lineHeight: 32,
+                    color: '#ffffff',
+                    rich: {
+                      fline: {
+                        padding: [0, 10, 10, 10],
+                        color: '#fff'
+                      },
+                      tline: {
+                        padding: [10, 10, 0, 10],
+                        color: '#fff'
+                      }
+                    }
+                  },
+                  emphasis: {
+                    show: true
+                  }
+                }
+              }
+            ]
           }
         }).catch(err => {
           console.log(err)
@@ -113,7 +235,7 @@ export default {
           if (!chart) {
             chart = eCharts.init(document.getElementById('JiangSuMap-chart'))
           }
-          console.log(options.value)
+          // console.log(options.value)
           chart.setOption(options.value)
         })
     }
