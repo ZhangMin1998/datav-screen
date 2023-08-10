@@ -6,8 +6,10 @@
 
 <script>
 /* eslint-disable */
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import * as eCharts from 'echarts'
+import cloneDeep from 'lodash/cloneDeep'
+
 export default {
   name: 'JiangSuMap',
   props: {
@@ -17,6 +19,7 @@ export default {
     const options = ref({
 
     })
+    let timeId = null
 
     const update = () => {
       fetch('http://www.youbaobao.xyz/datav-res/datav/jiangsuMapData.json')
@@ -82,7 +85,8 @@ export default {
                 show: true
               }
             }],
-            series: [
+            series:
+            [
               {
                 type: 'map',
                 map: 'jiangsu',
@@ -120,7 +124,7 @@ export default {
                 coordinateSystem: 'geo', // 使用的坐标系
                 z: 5, // z值小的图形会被z值大的图形覆盖
                 symbolSize: 14, // 标记的大小
-                data: [{value: _center[0].value, city: _center[0].key}],
+                data: [],
                 itemStyle: {
                   color: '#feae21'
                 },
@@ -157,7 +161,7 @@ export default {
                 coordinateSystem: 'geo', // 使用的坐标系
                 z: 5, // z值小的图形会被z值大的图形覆盖
                 symbolSize: 14, // 标记的大小
-                data: [{value: _center[1].value, city: _center[1].key}],
+                data: [],
                 itemStyle: {
                   color: '#e93f42'
                 },
@@ -194,7 +198,7 @@ export default {
                 coordinateSystem: 'geo', // 使用的坐标系
                 z: 5, // z值小的图形会被z值大的图形覆盖
                 symbolSize: 14, // 标记的大小
-                data: [{value: _center[2].value, city: _center[2].key}],
+                data: [],
                 itemStyle: {
                   color: '#08baec'
                 },
@@ -228,20 +232,46 @@ export default {
               }
             ]
           }
+
+          timeId = setInterval(() => {
+            const _options = cloneDeep(options.value)
+
+            // 初始化数据
+            for (var i = 1; i < 4; i++) {
+              _options.series[i].data = []
+            }
+            // 生成随机数
+            var cityIndex = Math.floor(Math.random() * 13)
+            var runidx = Math.floor(Math.random() * 3) + 1
+            // var coordCity = Object.keys(center)[cityIndex]
+            // var coord = center[coordCity]
+            _options.series[runidx].data = [{
+              city: _center[cityIndex].key,
+              value: _center[cityIndex].value
+            }]
+            options.value = _options
+            console.log(options.value)
+
+            let chart = null
+            if (!chart) {
+              chart = eCharts.init(document.getElementById('JiangSuMap-chart'))
+            }
+            // console.log(options.value)
+            chart.setOption(options.value)
+          }, 2000)
+
         }).catch(err => {
           console.log(err)
         }).finally(() => {
-          let chart = null
-          if (!chart) {
-            chart = eCharts.init(document.getElementById('JiangSuMap-chart'))
-          }
-          // console.log(options.value)
-          chart.setOption(options.value)
+
         })
     }
 
     onMounted(() => {
       update()
+    })
+    onUnmounted(() => {
+      clearTimeout(timeId)
     })
 
     return {
