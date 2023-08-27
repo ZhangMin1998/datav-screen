@@ -2,10 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import dataView from '@jiaminghi/data-view'
+import datav from 'datav-screen-zm'
+// import dataView from '@jiaminghi/data-view'
 // 先不做按需加载
 // import datavComponent from 'imooc-datav-libs-dev'
-import datav from 'datav-screen-libs'
+// import datav from 'datav-screen-libs'
 // import datavTestComponent from 'datav-screen-libs/src/components/Test/index'
 // import datavTestComponent2 from 'datav-screen-libs/src/components/Test2/index'
 import VueECharts from 'vue-echarts'
@@ -16,7 +17,7 @@ import countTo from 'vue3-count-to'
 createApp(App)
   .use(store)
   .use(router)
-  .use(dataView)
+  // .use(dataView)
   .use(datav)
   .use(countTo)
   .component('vue-echarts', VueECharts)

@@ -85,6 +85,7 @@
 <script>
 /* eslint-disable */
 // import { ref } from 'vue'
+// import Container from '@/components/Container/index.vue'
 import TopHeader from '@/components/TopHeader/index.vue'
 import { useScreenData } from './useScreenData'
 import TotalUser from '@/components/TotalUser'
@@ -106,6 +107,7 @@ import Earth from '@/components/JiangSuMap/index'
 export default {
   name: 'HomeView',
   components: {
+    // Container,
     TopHeader,
     TotalUser,
     AverageAge,
